@@ -28,9 +28,9 @@ app.use(express.json());
 app.use(morgan("dev"));
 app.use(cors());
 
-// app.use("/api/v1",(req:Request,res:Response)=>{
-//     res.send("hello")
-// })
+app.use("/", (req, res) => {
+  res.send("hello");
+});
 
 app.use("/api/v1/user", UserRouter);
 app.use("/api/v1/product", ProductRouter);
